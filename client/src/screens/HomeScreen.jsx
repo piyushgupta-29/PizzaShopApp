@@ -21,7 +21,7 @@ const HomeScreen = () => {
     <>
       <Container>
         {loading ? (
-          <div className="d-flex justify-content-end">
+          <div className="d-flex justify-content-center align-items-center" style={{height: "100vh"}}>
           	<Loader />
           </div>
         ) : error ? (

@@ -7,7 +7,7 @@ const Filters = () => {
   const [category, setcategory] = useState("all");
   const dispatch = useDispatch();
   return (
-    <div className="p-4 bg-info mt-4">
+    <div className="p-4 bg-secondary mt-4">
       <Form>
         <Row>
           <Col md={8}>

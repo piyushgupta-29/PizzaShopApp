@@ -1,0 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora&family=Playfair+Display:ital,wght@1,600&display=swap');
+
+body{
+    font-family: 'Lora', serif;
+    /* background: #EFEFBB; 
+background: -webkit-linear-gradient(to right, #D4D3DD, #EFEFBB);  
+background: linear-gradient(to right, #D4D3DD, #EFEFBB);  */
+    background-color: #faf7f7;
+}

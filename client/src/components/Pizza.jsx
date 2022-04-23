@@ -19,20 +19,20 @@ const Pizza = ({ pizza }) => {
 
   return (
     <>
-      <Card style={{ width: "18rem", marginTop: "30px" }}>
+      <Card style={{ width: "22rem", marginTop: "30px", marginBottom: "30px", boxShadow: "rgba(0, 0, 0, 0.35) 0px 5px 15px"}}>
         <Card.Img
           variant="top"
           src={pizza.image}
-          style={{ height: "250px", cursor: "pointer" }}
+          style={{ height: "200px", cursor: "pointer" }}
           onClick={handleShow}
         />
 
         <Card.Body>
-          <Card.Title>{pizza.name}</Card.Title>
+          <Card.Title><h5 style={{fontWeight: "bold"}}>{pizza.name}</h5></Card.Title>
           <hr />
           <Card.Text>
             <Row>
-              <Col md={6}>
+              <Col xxs={6}>
                 <h6>Varients</h6>
                 <select
                   value={varient}
@@ -43,7 +43,7 @@ const Pizza = ({ pizza }) => {
                   ))}
                 </select>
               </Col>
-              <Col md={6}>
+              <Col xxs={6}>
                 <h6>Quantity</h6>
                 <select
                   value={quantity}
@@ -59,11 +59,11 @@ const Pizza = ({ pizza }) => {
             </Row>
           </Card.Text>
           <Row>
-            <Col md={6}>Price : {pizza.prices[0][varient] * quantity} /-RS</Col>
+            <Col md={6}><span style={{fontWeight: "bold"}}>Price : {pizza.prices[0][varient] * quantity} /-RS</span></Col>
             <Col md={6}>
               <Button
                 onClick={addToCartHandler}
-                className="bg-warning text-white"
+                variant="success"
               >
                 Add to cart
               </Button>
