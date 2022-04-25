@@ -60,4 +60,20 @@ router.post("/deleteuser", async (req, res) => {
     res.status(404).json({ message: error.stack });
   }
 });
+
+router.post("/changeadmin", async (req,res) => {
+  const userid = req.body.userid;
+  try {
+    let user = await User.find({ _id: userid });
+    if(user.isAdmin)
+      user.isAdmin = false;
+    else 
+      user.isAdmin = true;
+    await user.save();
+    res.status(200).send("User Deleted");
+  } catch (error) {
+    res.status(404).json({ message: error.stack });
+  }
+});
+
 module.exports = router;

@@ -12,7 +12,7 @@ const HomeScreen = () => {
   const dispatch = useDispatch();
   const pizzastate = useSelector((state) => state.getAllPizzaReducer);
   const { loading, pizzas, error } = pizzastate;
-  console.log(pizzas);
+  // console.log(pizzas);
   useEffect(() => {
     dispatch(getAllPizzas());
   }, [dispatch]);
@@ -21,7 +21,7 @@ const HomeScreen = () => {
     <>
       <Container>
         {loading ? (
-          <div className="d-flex justify-content-center align-items-center" style={{height: "100vh"}}>
+          <div className="d-flex justify-content-center align-items-center" style={{height: "90vh"}}>
           	<Loader />
           </div>
         ) : error ? (

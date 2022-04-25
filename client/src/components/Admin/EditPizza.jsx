@@ -53,7 +53,9 @@ const EditPizza = ({ match }) => {
   };
   return (
     <div>
-      {updateloading && <Loader />}
+      {updateloading && <div className="d-flex justify-content-center align-items-center" style={{height: "70vh"}}>
+          	<Loader />
+          </div>}
       {error && <Error error="add new pizza error" />}
       {/* {success && <Success success="Pizza Added Successfully" />} */}
       <Form onSubmit={submitForm} className="bg-light p-4">

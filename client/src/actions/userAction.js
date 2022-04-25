@@ -5,6 +5,7 @@ export const registerUser = (user) => async (dispatch) => {
   try {
     await axios.post("/api/users/register", user);
     dispatch({ type: "USER_REGISTER_SUCCESS" });
+    window.location.href = '/login'
   } catch (error) {
     dispatch({ type: "USER_REGISTER_FAIL", payload: error });
   }
@@ -49,3 +50,19 @@ export const deleteUser = (userid) => async (dispatch) => {
     swal("Errro While Deleteing User");
   }
 };
+
+// export const changeAdmin = (userid) => async (dispatch) => {
+//   // const currentUser = getState().loginUserReducer.currentUser;
+//   dispatch({
+//     type: "CHANGE_ADMIN_REQUEST",
+//   });
+//   try {
+//     await axios.post("/api/users/changeadmin", { userid });
+//     alert("Deliverd Success");
+//     const orders = await axios.get("/api/users/getallusers");
+//     dispatch({ type: "CHANGE_ADMIN_SUCCESS" });
+//     window.location.href = "/admin/userlist";
+//   } catch (error) {
+//     dispatch({ type: "CHANGE_ADMIN_FAIL", payload: error });
+//   }
+// };

@@ -66,7 +66,7 @@ export const updatePizzaByIdReducer = (state = {}, action) => {
     case "UPDATE_PIZZABYID_REQUEST":
       return {
         ...state,
-        loading: true,
+        updateloading: true,
       };
     case "UPDATE_PIZZABYID_SUCCESS":
       return {

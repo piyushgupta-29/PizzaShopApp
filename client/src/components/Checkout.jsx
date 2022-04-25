@@ -12,18 +12,22 @@ const Checkout = ({ subTotal }) => {
   const dispatch = useDispatch();
   const tokenHandler = (token) => {
     dispatch(placeOrder(token, subTotal));
-    console.log(token);
+    // console.log(token);
   };
   return (
     <>
-      {loading && <Loader />}
+      {loading && 
+      // <div className="d-flex justify-content-center align-items-center" style={{height: "50vh"}}>
+          	<Loader />
+          // </div>
+        }
       {error && <Error error="something went wrong" />}
       {success && <Success success="order placed success" />}
       <StripeCheckout
         amount={subTotal * 100}
         shippingAddress
         token={tokenHandler}
-        stripeKey="pk_test_51HT3awLRpPHpN9zVZksDRZ16m6HANATIi914WwDG7xbmNKQGsMyXEBTuUxlNZlkZ3EYFsfu5t0NQDeNQYbukyICZ000lVzvD9Y"
+        stripeKey="pk_test_51KbKGiSGiqekAGBqgShzqDNCcMVjJiGrwD5cF1p6xKDJX2EvFjGDGoLaUspukDwi7QouJyQ784j5iabO8CbTlL4U00Oc4Rm2NH"
         currency="INR"
       >
         <Button>Pay Now</Button>

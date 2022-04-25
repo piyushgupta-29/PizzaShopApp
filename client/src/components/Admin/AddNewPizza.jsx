@@ -36,7 +36,9 @@ const AddNewPizza = () => {
   };
   return (
     <div>
-      {loading && <Loader />}
+      {loading && <div className="d-flex justify-content-center align-items-center" style={{height: "70vh"}}>
+          	<Loader />
+          </div>}
       {error && <Error error="add new pizza error" />}
       {success && <Success success="Pizza Added Successfully" />}
       <Form onSubmit={submitForm} className="bg-light p-4">
@@ -47,7 +49,7 @@ const AddNewPizza = () => {
               type="text"
               value={name}
               onChange={(e) => setname(e.target.value)}
-              placeholder="Enter email"
+              placeholder="Enter Pizza Name"
             />
           </Form.Group>
           <Row className="mb-3 mt-3">
@@ -67,17 +69,17 @@ const AddNewPizza = () => {
                 type="text"
                 value={mediumPrice}
                 onChange={(e) => setmediumPrice(e.target.value)}
-                placeholder="Enter medium price"
+                placeholder="Enter Medium Price"
               />
             </Form.Group>
 
             <Form.Group as={Col} controlId="formGridZip">
-              <Form.Label>Larg Price</Form.Label>
+              <Form.Label>Large Price</Form.Label>
               <Form.Control
                 type="text"
                 value={largprice}
                 onChange={(e) => setlargprice(e.target.value)}
-                placeholder="Enter larg price"
+                placeholder="Enter Large Price"
               />
             </Form.Group>
           </Row>

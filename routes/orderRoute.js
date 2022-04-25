@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const { v4: uuidv4 } = require("uuid");
 const stripe = require("stripe")(
-  "sk_test_51HT3awLRpPHpN9zViTDEbkof6MkC4qStmbuzVSwEUm05GbEZnd2a4WkgoI0lyBdF3JsF8zmgPQHue92gLGsMQmBe00cxfp61Uq"
+  "sk_test_51KbKGiSGiqekAGBqrNerLNcTAOpxwetHQl0FVe72zpBZ9TMJBEbI0bRD8Ddiy85ctv86WFkLPZ8HxKxvF4HpHFu400ikosVOj0"
 );
 const Order = require("../models/orderModel");
 
@@ -53,9 +53,9 @@ router.post("/placeorder", async (req, res) => {
 });
 
 router.post("/getuserorder", async (req, res) => {
-  const { userid } = req.body;
+  const { email } = req.body;
   try {
-    const orders = await Order.find({ userid }).sort({ _id: "-1" });
+    const orders = await Order.find({ email }).sort({ _id: "-1" });
     res.status(200).send(orders);
   } catch (error) {
     res.status(400).json({

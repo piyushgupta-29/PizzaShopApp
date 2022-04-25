@@ -18,7 +18,9 @@ const Pizzaslist = () => {
   return (
     <>
       {loading ? (
+        <div className="d-flex justify-content-center align-items-center" style={{height: "70vh"}}>
         <Loader />
+      </div>
       ) : error ? (
         <Error>Error while fetching pizzas {error}</Error>
       ) : (
@@ -37,7 +39,7 @@ const Pizzaslist = () => {
               {pizzas &&
                 pizzas.map((pizza) => (
                   <tr>
-                    <td>
+                    <td className="d-flex justify-content-center align-items-center">
                       <img
                         src={pizza.image}
                         alt="logo"

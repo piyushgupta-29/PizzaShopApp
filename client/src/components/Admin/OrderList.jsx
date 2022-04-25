@@ -14,7 +14,9 @@ const OrderList = () => {
   return (
     <div>
       <h1>Order Lists</h1>
-      {loading && <Loader />}
+      {loading && <div className="d-flex justify-content-center align-items-center" style={{height: "70vh"}}>
+          	<Loader />
+          </div>}
       {error && <Error error="Admin Order req fail" />}
       <Table striped bordered hover>
         <thead>
