@@ -12,7 +12,7 @@ const Checkout = ({ subTotal }) => {
   const dispatch = useDispatch();
   const tokenHandler = (token) => {
     dispatch(placeOrder(token, subTotal));
-    console.log(token);
+    // console.log(token);
   };
   return (
     <>

@@ -25,7 +25,7 @@ router.post("/placeorder", async (req, res) => {
         idempotencyKey: uuidv4(),
       }
     );
-    console.log(payment);
+    // console.log(payment);
     if (payment) {
       console.log(payment);
       const newOrder = new Order({

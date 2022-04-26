@@ -12,7 +12,7 @@ export const placeOrder = (token, subTotal) => async (dispatch, getState) => {
       cartItems,
     });
     dispatch({ type: "PLACE_ORDER_SUCCESS" });
-    console.log(res);
+    // console.log(res);
   } catch (error) {
     dispatch({ type: "PLACE_ORDER_FAIL" });
     console.log(error);
