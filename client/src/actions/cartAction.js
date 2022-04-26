@@ -13,6 +13,10 @@ export const addToCart = (pizza, quantity, varient) => (dispatch, getState) => {
   } else {
     if (cartItem.quantity < 1) {
       dispatch({ type: "DELETE_FROM_CART", payload: pizza });
+      localStorage.setItem(
+        "cartItems",
+        JSON.stringify(getState().cartReducer.cartItems)
+      );
     } else {
       dispatch({ type: "ADD_TO_CART", payload: cartItem });
       localStorage.setItem(

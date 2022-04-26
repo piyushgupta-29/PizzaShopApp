@@ -41,10 +41,10 @@ const rootReducer = combineReducers({
 
 const initialState = {
   cartReducer: {
-    cartItems: cartItems,
+    cartItems
   },
   loginUserReducer: {
-    currentUser: currentUser,
+    currentUser,
   },
 };
 const middleware = [thunk];

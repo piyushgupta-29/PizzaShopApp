@@ -24,7 +24,7 @@ const OrderScreen = () => {
         orders.map((order) => (
           <div className="container border p-4 bg-light">
             <Row>
-              <Col md={4}>
+              <Col md={3}>
                 <h4>Items :</h4>
                 {order.orderItems.map((item) => (
                   <h6 key={item.name}>
@@ -40,11 +40,19 @@ const OrderScreen = () => {
                 <h6>PinCode : {order.shippingAddress.picode}</h6>
                 <h6>Country : {order.shippingAddress.country}</h6>
               </Col>
-              <Col md={5}>
+              <Col md={4}>
                 <h4>Order Info :</h4>
                 <h6>Order Amount : {order.orderAmount}</h6>
                 <h6>Transaction id : {order.transectionId}</h6>
                 <h6>Order id : {order._id}</h6>
+              </Col>
+              <Col md={2}>
+                <h4>Status</h4>
+                {
+                  order.isDeliverd ? 
+                  <p className="text-success">Delivered</p>
+                  : <p className="text-danger">Not Delivered</p>
+                }
               </Col>
             </Row>
           </div>
