@@ -12,7 +12,7 @@ const Checkout = ({ subTotal }) => {
   const dispatch = useDispatch();
   const tokenHandler = (token) => {
     dispatch(placeOrder(token, subTotal));
-    // console.log(token);
+    console.log(token);
   };
   return (
     <>
@@ -27,7 +27,7 @@ const Checkout = ({ subTotal }) => {
         amount={subTotal * 100}
         shippingAddress
         token={tokenHandler}
-        stripeKey="pk_test_51KbKGiSGiqekAGBqgShzqDNCcMVjJiGrwD5cF1p6xKDJX2EvFjGDGoLaUspukDwi7QouJyQ784j5iabO8CbTlL4U00Oc4Rm2NH"
+        stripeKey="pk_test_51HT3awLRpPHpN9zVZksDRZ16m6HANATIi914WwDG7xbmNKQGsMyXEBTuUxlNZlkZ3EYFsfu5t0NQDeNQYbukyICZ000lVzvD9Y"
         currency="INR"
       >
         <Button>Pay Now</Button>

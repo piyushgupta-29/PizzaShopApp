@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const { v4: uuidv4 } = require("uuid");
 const stripe = require("stripe")(
-  "sk_test_51KbKGiSGiqekAGBqrNerLNcTAOpxwetHQl0FVe72zpBZ9TMJBEbI0bRD8Ddiy85ctv86WFkLPZ8HxKxvF4HpHFu400ikosVOj0"
+  "sk_test_51HT3awLRpPHpN9zViTDEbkof6MkC4qStmbuzVSwEUm05GbEZnd2a4WkgoI0lyBdF3JsF8zmgPQHue92gLGsMQmBe00cxfp61Uq"
 );
 const Order = require("../models/orderModel");
 
@@ -13,6 +13,7 @@ router.post("/placeorder", async (req, res) => {
       email: token.email,
       source: token.id,
     });
+    console.log(customer);
     const payment = await stripe.charges.create(
       {
         amount: subTotal * 100,
@@ -24,7 +25,9 @@ router.post("/placeorder", async (req, res) => {
         idempotencyKey: uuidv4(),
       }
     );
+    console.log(payment);
     if (payment) {
+      console.log(payment);
       const newOrder = new Order({
         name: currentUser.name,
         email: currentUser.email,
