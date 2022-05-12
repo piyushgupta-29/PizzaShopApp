@@ -11,7 +11,7 @@ const Pizzaslist = () => {
   const dispatch = useDispatch();
   const pizzastate = useSelector((state) => state.getAllPizzaReducer);
   const { loading, pizzas, error } = pizzastate;
-  console.log(pizzas);
+  // console.log(pizzas);
   useEffect(() => {
     dispatch(getAllPizzas());
   }, [dispatch]);
@@ -60,7 +60,7 @@ const Pizzaslist = () => {
                       <Link to={`/admin/editpizza/${pizza._id}`}>
                         <AiFillEdit style={{ cursor: "pointer" }} />
                       </Link>
-                      &nbsp;
+                      &nbsp;&nbsp;
                       <AiFillDelete
                         style={{ color: "red", cursor: "pointer" }}
                         onClick={() => {

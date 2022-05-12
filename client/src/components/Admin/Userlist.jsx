@@ -26,7 +26,7 @@ const Userlist = () => {
             <th>User ID</th>
             <th>Name</th>
             <th>Email</th>
-            {/* <th>Is Admin</th> */}
+            <th>Is Admin</th>
             <th>Delete</th>
           </tr>
         </thead>
@@ -37,7 +37,7 @@ const Userlist = () => {
                 <td>{user._id}</td>
                 <td>{user.name}</td>
                 <td>{user.email}</td>
-                {/* <td>
+                <td>
                 {
                   user.isAdmin ? 
                   <Button
@@ -58,7 +58,7 @@ const Userlist = () => {
                     Make Admin
                   </Button>
                 }
-                </td> */}
+                </td>
                 <td>
                   <AiFillDelete
                     style={{ color: "red", cursor: "pointer" }}

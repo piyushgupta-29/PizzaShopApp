@@ -65,12 +65,21 @@ router.post("/changeadmin", async (req,res) => {
   const userid = req.body.userid;
   try {
     let user = await User.find({ _id: userid });
-    if(user.isAdmin)
-      user.isAdmin = false;
+    if(user[0].isAdmin)
+    {
+      await User.findByIdAndUpdate(
+        userid,
+        { $set: { isAdmin: false }}
+      )
+    }
     else 
-      user.isAdmin = true;
-    await user.save();
-    res.status(200).send("User Deleted");
+    {
+      await User.findByIdAndUpdate(
+        userid,
+        { $set: { isAdmin: true }}
+      )
+    }
+    res.status(200).send("isAdmin changed");
   } catch (error) {
     res.status(404).json({ message: error.stack });
   }

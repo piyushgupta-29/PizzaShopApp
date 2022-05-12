@@ -51,18 +51,16 @@ export const deleteUser = (userid) => async (dispatch) => {
   }
 };
 
-// export const changeAdmin = (userid) => async (dispatch) => {
-//   // const currentUser = getState().loginUserReducer.currentUser;
-//   dispatch({
-//     type: "CHANGE_ADMIN_REQUEST",
-//   });
-//   try {
-//     await axios.post("/api/users/changeadmin", { userid });
-//     alert("Deliverd Success");
-//     const orders = await axios.get("/api/users/getallusers");
-//     dispatch({ type: "CHANGE_ADMIN_SUCCESS" });
-//     window.location.href = "/admin/userlist";
-//   } catch (error) {
-//     dispatch({ type: "CHANGE_ADMIN_FAIL", payload: error });
-//   }
-// };
+export const changeAdmin = (userid) => async (dispatch) => {
+  dispatch({
+    type: "CHANGE_ADMIN_REQUEST",
+  });
+  try {
+    await axios.post("/api/users/changeadmin", { userid });
+    const orders = await axios.get("/api/users/getallusers");
+    dispatch({ type: "CHANGE_ADMIN_SUCCESS" });
+    window.location.reload();
+  } catch (error) {
+    dispatch({ type: "CHANGE_ADMIN_FAIL", payload: error });
+  }
+};
