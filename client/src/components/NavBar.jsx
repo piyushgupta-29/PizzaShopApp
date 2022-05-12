@@ -14,8 +14,8 @@ const NavBar = () => {
         <Container>
           <Navbar.Brand>
             <Image
-              src="images/Logo.png"
-              alt="logo"
+              src="images/Log.png"
+              alt="Piyush Pizza Shop"
               style={{ height: "50px" }}
             />
           </Navbar.Brand>
