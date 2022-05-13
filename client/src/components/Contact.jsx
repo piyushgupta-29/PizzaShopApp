@@ -33,7 +33,7 @@ const Contact = () => {
 				<Col md={4}>
 					<h1 style={{"fontSize": "1rem","fontWeight": "bold"}}>Email</h1>
 					<AiOutlineMail style={{"color": "red"}} /> &nbsp;
-					feedback@piyushpizza.com
+					feedback@piyushpizzashop.com
 				</Col>
 			</Row>
 		</Container>
